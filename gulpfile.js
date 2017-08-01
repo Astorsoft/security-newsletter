@@ -5,9 +5,11 @@ const plugins = gulpLoadPlugins();
 gulp.task('html')
   .src('*.mjml')
   .pipe(plugins.mjml())
-  .pipe(gulp.dest('./html'));
+  .pipe(gulp.dest('./'));
 
 
 gulp.task('default', ['html'], function() {
   gulp.watch(['*.mjml'], ['html']);
 });
+
+gulp.task('build', ['html']);
